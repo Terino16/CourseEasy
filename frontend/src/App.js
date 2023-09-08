@@ -1,5 +1,5 @@
 import React from "react";
-
+import Contact from "./Pages/Contact"
 import { Routes,Route } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./Pages/Home";
@@ -18,7 +18,7 @@ function App() {
       <Route path="/Login" element={<LoginPage/>}></Route>
       <Route path="/Signup" element={<Signup/>}></Route>
       <Route path="/Courses" element={<Courses/>}></Route>
-      <Route path="/Courses" element={<Courses/>}></Route>
+      <Route path="/Contact" element={<Contact/>}></Route>
       <Route path="/Courses/:id" element={<SingleCoursepage/>}></Route>
      </Routes>
      </Layout>

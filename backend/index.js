@@ -40,10 +40,7 @@ const authenticate = (req, res, next) => {
     });
   }
 };
-
-
  mongoose.connect(process.env.MONGODB_URL)
-
 const bcryptSalt=bcrypt.genSaltSync(10);
 
 app.post('/Signup', async (req, res) => {

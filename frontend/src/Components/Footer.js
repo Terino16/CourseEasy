@@ -16,9 +16,6 @@ const Footer = () => {
         </div>
       </div>
     </div>
-    <div className="text-center mt-4">
-      &copy; {new Date().getFullYear()} CourseEasy. All rights reserved.
-    </div>
   </footer>
   )
 }

@@ -25,7 +25,7 @@ const Courses = () => {
   }, []);
 
   return (
-    <div>
+    <div className='my-32 ml-[5rem] items-center justify-center '>
       {loading ? (
         <p>Loading...</p>
       ) : (
