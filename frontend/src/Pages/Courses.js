@@ -7,7 +7,7 @@ const Courses = () => {
 
   useEffect(() => {
     // Fetch data when the component mounts
-    fetch("http://localhost:3001/Courses", {
+    fetch("http://localhost:3001/courses", {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ const Courses = () => {
       })
       .catch(error => {
         console.error('Error:', error);
-        setLoading(false); // Handle error and set loading to false
+        setLoading(false); 
       });
   }, []);
 

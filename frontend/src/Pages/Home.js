@@ -8,19 +8,7 @@ import johnhopkins from "../Images/johnhopkins.png";
 import Illinois from "../Images/Illinois.png";
 import Courses from "./Courses";
 
-const LottieAnimation = () => {
-  const defaultOptions = {
-    loop: true, // Set to true if you want the animation to loop
-    autoplay: true, // Set to true to start playing the animation when the component mounts
-    animationData: animationData, // Your animation file imported above
-  };
 
-  return (
-    <div>
-      <Lottie options={defaultOptions} height={400} width={400} />
-    </div>
-  );
-};
 
 const Home = () => {
   return (
@@ -51,7 +39,7 @@ const Home = () => {
           </button>
         </div>
         <div>
-          <LottieAnimation />
+         
         </div>
       </div>
       <div className="flex flex-col items-center mt-4  divide-y-2 border-b-2">

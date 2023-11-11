@@ -15,7 +15,7 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (Signupdata.name !== '' && Signupdata.password !== '' && Signupdata.email !== '') {
-      fetch("http://localhost:3001/Signup",{
+      fetch("http://localhost:3001/user/Signup",{
       method:'POST',
       headers: {
         'Content-Type': 'application/json', // Specify JSON content type

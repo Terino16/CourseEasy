@@ -13,7 +13,7 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email !== '' && password !== '') {
-      fetch("http://localhost:3001/login",{
+      fetch("http://localhost:3001/user/Login",{
       method:'POST',
       headers: {
         'Content-Type': 'application/json', // Specify JSON content type
