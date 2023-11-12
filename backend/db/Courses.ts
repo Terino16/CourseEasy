@@ -10,5 +10,4 @@ const Courseschema=new mongoose.Schema({
    provider:String
 })
 
-const Course=mongoose.model('Course',Courseschema);
-module.exports=Course;
+export default mongoose.model('Course',Courseschema);

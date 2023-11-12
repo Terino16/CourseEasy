@@ -1,4 +1,4 @@
-const mongoose=require("mongoose")
+import  mongoose from "mongoose";
 const  { Schema }=mongoose
     
     
@@ -8,5 +8,4 @@ const Userschema=new Schema({
    password:String
 })
 
-const Usermodel=mongoose.model('User',Userschema);
-module.exports=Usermodel;
+export default mongoose.model('User',Userschema);

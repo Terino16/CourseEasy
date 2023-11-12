@@ -1,6 +1,6 @@
-const express = require('express');
+import  express from "express";
 const router = express.Router();
-const Course=require("../db/Courses");
+import Course from "../db/Courses";
 
 
 router.get('/',async(req,res)=>{
