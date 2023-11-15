@@ -12,7 +12,7 @@ router.post('/Signup', async (req, res) => {
     }
     console.log(req.body);
        try {
-        const userdoc = await User.create({
+       await User.create({
           name,
           email,
           password:bcrypt.hashSync(password,bcryptSalt)
@@ -20,9 +20,7 @@ router.post('/Signup', async (req, res) => {
 
         console.log("user doc created")
         const token = jwt.sign({email}, secretKey,{expiresIn:"1h"})
-        console.log("token bn gaya");
-        console.log('User created:', userdoc);
-        return res.cookie('token',token).json({"Message":"User crearted"});
+        return res.json({"Message":"User crearted",token,name});
       } catch (err) {
         console.error(err);
       }
@@ -33,14 +31,18 @@ router.post('/Signup', async (req, res) => {
     if (!email || !password) {
       return res.sendStatus(400);
     }
-    console.log(email);
     const existingUser = await User.findOne({email});
-    if (existingUser) {
+    if (!existingUser) {
       return res.sendStatus(400);
     }
-    console.log(existingUser);
-    const token = jwt.sign(email, secretKey, { expiresIn:"1h" })
-    res.cookie('token',token).json({"message":"User Logged in"});
+    const name=existingUser.name;
+    if(!name)
+    {
+      return res.status(500).json({message:'No Name Found'});
+    }
+    console.log(name);
+    const token = jwt.sign({email}, secretKey,{expiresIn:"1h"})
+    res.json({"message":"User Logged in",token,name});
   });
 
   module.exports=router;

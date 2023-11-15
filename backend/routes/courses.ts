@@ -4,7 +4,6 @@ import Course from "../db/Courses";
 
 
 router.get('/',async(req,res)=>{
-    console.log("Hi");
     const course=await Course.find();
     if(!course)
     res.json({message:"Error finding any course"})
