@@ -4,9 +4,21 @@ const router = express.Router();
 import  bcrypt from 'bcryptjs';
 const bcryptSalt=10;
 import jwt from "jsonwebtoken";
+import {z} from "zod";
 const secretKey = "Anubhavbjpneta";
+
+let SignupInputs=z.object({
+  name:z.string().min(1),
+  email:z.string().min(1),
+  password:z.string().min(1),
+})
 router.post('/Signup', async (req, res) => {
-    const {name,email,password}=req.body;
+  const SignupInput=SignupInputs.safeParse(req.body);
+  if(!SignupInput.success)
+  {
+    return res.status(411).json({"message":"INput error"});
+  }
+    const {name,email,password}=SignupInput.data;
     if (!email || !password ||!name) {
       return res.sendStatus(400);
     }

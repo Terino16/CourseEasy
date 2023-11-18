@@ -13,13 +13,9 @@ export type Coursetype={
   duration:number;
   pace:string;
 }
-
-
-const Course = () => {
+function useGetCourse(){
   const [courses, setCourses] = useState<Coursetype[]|null>();
   const [loading, setLoading] = useState(true);
-
-
   useEffect(() => {
     const url="http://localhost:3001/courses";
     axios.get(url).then((result)=>{
@@ -30,8 +26,14 @@ const Course = () => {
       setLoading(false); 
     });
   }, [])
-  
+  return{
+    courses,
+    loading
+  }
+}
 
+const Course = () => {
+ const {courses,loading}=useGetCourse();
   return (
     <div className='my-32 ml-[5rem] items-center justify-center '>
       {loading ? (

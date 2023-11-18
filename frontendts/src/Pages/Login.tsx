@@ -24,7 +24,6 @@ const Login = () => {
         Cookies.set("token",token);
         Cookies.set("name",response.data.name);
         setUser(response.data.name);
-        window.location.href="/";
       } catch (error) {
         console.error('Error during login:', error);
         alert('Invalid username or password. Please try again.');
@@ -47,7 +46,9 @@ const Login = () => {
           className="mt-1 p-2 w-full border border-gray-300 rounded-md"
           placeholder="Enter your username"
           value={email}
-          onChange={(e) => setemail(e.target.value)}
+          onChange={(e) => {
+            e.preventDefault();
+            setemail(e.target.value)}}
           required
         />
       </div>
