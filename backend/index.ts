@@ -19,7 +19,7 @@ if (!mongoDBUrl) {
 mongoose.connect(mongoDBUrl).then(() => console.log('Connected to MongoDB')).catch(err => console.error('MongoDB connection error:', err));
 app.use("/courses",courseroutes);
 app.use("/user",userroutes);
-
+console.log("Check this out");
 
 
 app.listen(port, () => {
