@@ -1,6 +1,4 @@
-// import React from "react";
-// import Lottie from "react-lottie";
-// import animationData from "../animation/studyanimation.json";
+
 import Michigan from "/Images/Michigan.png";
 import Duke from "/Images/Duke.png";
 import Google from "/Images/Google.png";
@@ -8,36 +6,33 @@ import johnhopkins from "/Images/johnhopkins.png";
 import Illinois from "/Images/Illinois.png";
 import Courses from "./Course";
 
+
 const Home = () => {
   return (
     <div className="h-full w-full md:mb-40">
-      <div className="flex flex-row py-16 px-36 bg-gray-100 items-center">
+      <div className="flex flex-row py-16 px-36  items-center">
         <div className="flex flex-col space-y-3">
-          <p className="text-6xl text-blue-500 font-bold">
-            CourseEasy<sub className="text-xl">Plus</sub>
+          <p className="text-6xl text-black font-bold">
+            Learn Any Skill to Advance your <p className="text-blue-800">Career Path</p>
           </p>
-          <br />
-          <br />
-          <p className="text-2xl font-light text-gray-600">
-            Unlimited access to 7,000+ world-class courses, hands-on projects,
-            and job-ready certificate programs—all included in your subscription
-          </p>
-          <br /> <br />
-          <br />
-          <p className="font-bold text-black text-sm">
-            ₹4,878/month, cancel anytime
-          </p>
+          
+          <button className="p-1 w-fit">
+            <p className="font-bold text-black py-4 text-left">
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates aliquid hic, tempora magnam tempore possimus sequi maiores vel totam iure vero quod quis repellat similique dolores eius. Deleniti aut harum laudantium quod tempore nemo dolor necessitatibus. Quae ad natus, laborum saepe repellendus labore, similique esse distinctio enim ut, ex quam.
+            </p>
+          </button>
+
+          <div className="flex items-center justify-between px-8">
           <button className="p-3 bg-blue-700 w-fit">
             <p className="font-bold text-white">Start a 7-Day Free Trial</p>
           </button>
-          <button className="p-1 w-fit">
-            <p className="font-bold text-blue-600">
-              or ₹32,990/year with 14-day money-back guarantee
-            </p>
-          </button>
+
+          <img src="https://png.pngtree.com/png-vector/20220721/ourmid/pngtree-four-star-rating-sign-png-image_6026608.png" width={100}/>
+         
+          </div>
         </div>
         <div>
-         
+       <img src="https://media.istockphoto.com/id/875960654/photo/its-such-a-life-changing-moment.jpg?s=612x612&w=0&k=20&c=qahQubF_pLHXO4nwX_b05jeLmmaHkXad2FXszaAL5ss=" width={1200}/>
         </div>
       </div>
       <div className="flex flex-col items-center mt-4  divide-y-2 border-b-2">

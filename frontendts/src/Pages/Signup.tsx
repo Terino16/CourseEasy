@@ -5,6 +5,7 @@ import { useSetRecoilState } from 'recoil';
 import Cookies from 'js-cookie';
 import { authState } from '../Store/UserStore';
 const Signup = () => {
+  const BASE_URL_LOCAL="http://localhost:3001";
   const setUser = useSetRecoilState(authState);
   const [Signupdata,setSignupdata]=useState({
     name: '',
@@ -21,7 +22,7 @@ const Signup = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/user/Signup', {
+      const response = await axios.post(`${BASE_URL_LOCAL}/user/Signup`, {
         name: Signupdata.name,
         email: Signupdata.email,
         password: Signupdata.password,
@@ -30,6 +31,7 @@ const Signup = () => {
       const token = response.data.token;
         Cookies.set("token",token);
         Cookies.set("name",response.data.name);
+        Cookies.set("id",response.data.id);
         setUser(response.data.name);
         window.location.href="/";
     } catch (error) {
